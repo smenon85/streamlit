@@ -14,7 +14,7 @@ selected_transaction = st.selectbox("Select Transaction Number", transaction_ids
 # Get the selected transaction row
 transaction_entry = table1[table1['TransactionNumber'] == selected_transaction].iloc[0]
 
-st.write("Transaction Entry Keys:", transaction_entry.keys())
+#st.write("Transaction Entry Keys:", transaction_entry.keys())
 
 # Find matching rows in table2
 matching_rows = table2[
