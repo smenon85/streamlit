@@ -5,6 +5,7 @@ import pandas as pd
 # Replace these with your actual data sources
 table1 = pd.read_csv("table1.csv")
 table2 = pd.read_csv("table2.csv")
+table1.columns = table1.columns.str.strip()  # Remove leading/trailing spaces
 table2.columns = table2.columns.str.strip()  # Remove leading/trailing spaces
 
 st.title("📑 Transaction Document Tracker")
@@ -13,20 +14,20 @@ st.title("📑 Transaction Document Tracker")
 st.write("Table 1 loaded:", table1.shape)
 st.write("Table 2 loaded:", table2.shape)
 st.sidebar.header("Select a Transaction")
-transaction_ids = table2['TransactionNumber'].unique()
+transaction_ids = table1['TransactionNumber'].unique()
 selected_transaction = st.sidebar.selectbox("TransactionNumber", transaction_ids)
 
 # --- Filter selected entry from Table 2 ---
-transaction_entry = table2[table2['TransactionNumber'] == selected_transaction].iloc[0]
+transaction_entry = table1[table1['TransactionNumber'] == selected_transaction].iloc[0]
 
-# --- Match entry in Table 1 ---
-matched_entry = table1[
-    (table1['ProcessID'] == transaction_entry['Process ID']) &
-    (table1['SubProcessID'] == transaction_entry['Sub Process ID']) &
-    (table1['Region'] == transaction_entry['Region']) &
-    (table1['IncoTerm'] == transaction_entry['Inco Term']) &
-    (table1['PaymentTerm'] == transaction_entry['Payment Term']) &
-    (table1['Plant'] == transaction_entry['Plant'])
+# --- Match entry in Table 2 ---
+matched_entry = table2[
+    (table2['ProcessID'] == transaction_entry['Process ID']) &
+    (table2['SubProcessID'] == transaction_entry['Sub Process ID']) &
+    (table2['Region'] == transaction_entry['Region']) &
+    (table2['IncoTerm'] == transaction_entry['Inco Term']) &
+    (table2['PaymentTerm'] == transaction_entry['Payment Term']) &
+    (table2['Plant'] == transaction_entry['Plant'])
 ]
 
 st.subheader(f"Transaction Details: {selected_transaction}")
