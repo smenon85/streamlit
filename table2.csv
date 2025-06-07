@@ -1,4 +1,4 @@
-Process ID,Sub Process ID,Region,INcoTerm,Payment Term,PLant,Document Type,RESP,VERF
+ProcessID,SubProcessID,Region,IncoTerm,PaymentTerm,Plant,DocumentType,RESP,VERF
 SD,SCM,EU,CIF,ADV,PLANT1,O01,ARYA,SANDEEP
 SD,SCM,EU,CIF,ADV,PLANT1,O02,ARUNIMA,SANDEEP
 SD,SCM,EU,CIF,ADV,PLANT1,O03,ARYA,SANDEEP
