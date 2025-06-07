@@ -10,19 +10,19 @@ st.title("📑 Transaction Document Tracker")
 
 # --- Select Transaction ---
 st.sidebar.header("Select a Transaction")
-transaction_ids = table2['Transaction Number'].unique()
-selected_transaction = st.sidebar.selectbox("Transaction Number", transaction_ids)
+transaction_ids = table2['TransactionNumber'].unique()
+selected_transaction = st.sidebar.selectbox("TransactionNumber", transaction_ids)
 
 # --- Filter selected entry from Table 2 ---
-transaction_entry = table2[table2['Transaction Number'] == selected_transaction].iloc[0]
+transaction_entry = table2[table2['TransactionNumber'] == selected_transaction].iloc[0]
 
 # --- Match entry in Table 1 ---
 matched_entry = table1[
-    (table1['Process ID'] == transaction_entry['Process ID']) &
-    (table1['Sub Process ID'] == transaction_entry['Sub Process ID']) &
+    (table1['ProcessID'] == transaction_entry['Process ID']) &
+    (table1['SubProcessID'] == transaction_entry['Sub Process ID']) &
     (table1['Region'] == transaction_entry['Region']) &
-    (table1['Inco Term'] == transaction_entry['Inco Term']) &
-    (table1['Payment Term'] == transaction_entry['Payment Term']) &
+    (table1['IncoTerm'] == transaction_entry['Inco Term']) &
+    (table1['PaymentTerm'] == transaction_entry['Payment Term']) &
     (table1['Plant'] == transaction_entry['Plant'])
 ]
 
