@@ -1,4 +1,4 @@
-Transaction Number,Process ID,Sub Process ID,Region,IncoTerm,Payment Term,Plant
+Transaction Number,Process ID,Sub Process ID,Region,Inco Term,Payment Term,Plant
 800001,SD,SCM,EU,CIF,ADV,PLANT1
 800002,SD,SCM,US,DDP,ADV,PLANT1
 800003,SD,SD,EU,DDP,LC,PLANT2
