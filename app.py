@@ -15,6 +15,8 @@ selected_transaction = st.sidebar.selectbox("Transaction Number", transaction_id
 # Filter selected transaction row
 transaction_entry = table1[table1['TransactionNumber'] == selected_transaction].iloc[0]
 
+st.write("Transaction entry keys:", transaction_entry.keys().tolist())
+
 # Try to find the matching entry in table2
 matched_entry = table2[
     (table2['ProcessID'] == transaction_entry['ProcessID']) &
