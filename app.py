@@ -10,6 +10,8 @@ table2.columns = table2.columns.str.strip()  # Remove leading/trailing spaces
 st.title("📑 Transaction Document Tracker")
 
 # --- Select Transaction ---
+st.write("Table 1 loaded:", table1.shape)
+st.write("Table 2 loaded:", table2.shape)
 st.sidebar.header("Select a Transaction")
 transaction_ids = table2['TransactionNumber'].unique()
 selected_transaction = st.sidebar.selectbox("TransactionNumber", transaction_ids)
