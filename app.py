@@ -22,11 +22,11 @@ transaction_entry = table1[table1['TransactionNumber'] == selected_transaction].
 
 # --- Match entry in Table 2 ---
 matched_entry = table2[
-    (table2['ProcessID'] == transaction_entry['Process ID']) &
-    (table2['SubProcessID'] == transaction_entry['Sub Process ID']) &
+    (table2['ProcessID'] == transaction_entry['ProcessID']) &
+    (table2['SubProcessID'] == transaction_entry['SubProcessID']) &
     (table2['Region'] == transaction_entry['Region']) &
-    (table2['IncoTerm'] == transaction_entry['Inco Term']) &
-    (table2['PaymentTerm'] == transaction_entry['Payment Term']) &
+    (table2['IncoTerm'] == transaction_entry['IncoTerm']) &
+    (table2['PaymentTerm'] == transaction_entry['PaymentTerm']) &
     (table2['Plant'] == transaction_entry['Plant'])
 ]
 
