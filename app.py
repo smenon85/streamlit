@@ -5,6 +5,7 @@ import pandas as pd
 # Replace these with your actual data sources
 table1 = pd.read_csv("table1.csv")
 table2 = pd.read_csv("table2.csv")
+table2.columns = table2.columns.str.strip()  # Remove leading/trailing spaces
 
 st.title("📑 Transaction Document Tracker")
 
